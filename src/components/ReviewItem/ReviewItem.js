@@ -3,6 +3,8 @@ import React from 'react';
 const ReviewItem = (props) => {
     //console.log(props);
     const {name, quantity, key, price} = props.product;
+    document.title = "Order Review";
+
     const reviewItemStyle = {
         borderBottom:'1px solid gray',
         marginBottom:'5px',

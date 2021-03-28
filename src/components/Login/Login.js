@@ -6,6 +6,7 @@ import { createUserWithEmailAndPassword, handleFbSignIn, handleGoogleSignIn, han
 
 function Login() {
   const [newUser, setNewUser] = useState(false);
+  document.title = "Login"
   const [user, setUser] = useState({
     isSignedIn: false,
     name: '',
