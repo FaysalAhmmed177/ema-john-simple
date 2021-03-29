@@ -24,7 +24,7 @@ const Review = () => {
         const savedCart = getDatabaseCart();
         const productKeys = Object.keys(savedCart);
 
-        fetch('http://localhost:5000/productsByKeys', {
+        fetch('https://thawing-sierra-52260.herokuapp.com/productsByKeys', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -32,7 +32,11 @@ const Review = () => {
             body: JSON.stringify(productKeys)
         })
         .then(res => res.json())
-        .then(data => setCart(data))
+        .then(data => {
+            console.log('Total Product added to review',data.length);
+            setCart(data);
+            
+        })
     }, [])
 
     let thankYou;
